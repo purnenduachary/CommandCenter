@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#070b08" />
+  <meta name="description" content="Mac's personal command center. A sovereign's schedule for learning, building, training and play." />
+  <title>Mac's Command Center | Latverian Protocol</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="scan-beam" aria-hidden="true"></div>
+  <div class="ambient-glow glow-one" aria-hidden="true"></div>
+  <div class="ambient-glow glow-two" aria-hidden="true"></div>
+
+  <main class="app">
+    <header class="topbar">
+      <div class="brand-lockup">
+        <div class="brand-seal" aria-hidden="true">
+          <svg viewBox="0 0 100 100" role="presentation">
+            <circle cx="50" cy="50" r="43" />
+            <circle cx="50" cy="50" r="35" />
+            <path d="M50 13 58 39 85 50 58 61 50 87 42 61 15 50 42 39Z" />
+            <path d="M50 29 71 50 50 71 29 50Z" />
+            <path d="M50 4v16M50 80v16M4 50h16M80 50h16M18 18l11 11M71 71l11 11M82 18 71 29M29 71 18 82" />
+          </svg>
+        </div>
+        <div>
+          <div class="eyebrow">LATVERIAN AUTHORITY <span>//</span> PERSONAL OPERATIONS</div>
+          <h1>MAC<span>_</span></h1>
+          <p id="dateLine"></p>
+        </div>
+      </div>
+      <div class="clock-wrap">
+        <div class="system-state"><i></i> SOVEREIGN SYSTEM ONLINE</div>
+        <div id="clock">00:00</div>
+        <div id="status">FOCUS PROTOCOL ACTIVE</div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="section-label"><span class="label-mark"></span> TODAY'S DIRECTIVE</div>
+        <h2 id="todayTitle">Loading...</h2>
+        <p id="todaySubtitle"></p>
+        <div class="hero-stamp"><span>VON DOOM</span><b>•</b><span>ORDER THROUGH DISCIPLINE</span></div>
+      </div>
+
+      <div class="hero-side">
+        <div class="sigil-stage" aria-label="Animated green Latverian-style portal sigil">
+          <div class="sigil-aura"></div>
+          <svg class="sigil-outer" viewBox="0 0 240 240" aria-hidden="true">
+            <defs>
+              <filter id="sigilGlow"><feGaussianBlur stdDeviation="3.5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <g filter="url(#sigilGlow)">
+              <circle cx="120" cy="120" r="108" />
+              <circle cx="120" cy="120" r="96" />
+              <circle cx="120" cy="120" r="82" stroke-dasharray="2 8" />
+              <path d="M120 14 139 81 206 120 139 139 120 226 101 139 34 120 101 81Z" />
+              <path d="M120 39 201 120 120 201 39 120Z" />
+              <path d="M120 56 184 120 120 184 56 120Z" />
+              <path d="M120 14v25M120 201v25M14 120h25M201 120h25M45 45l18 18M177 177l18 18M195 45l-18 18M63 177l-18 18" />
+              <path d="M120 68 133 107 172 120 133 133 120 172 107 133 68 120 107 107Z" />
+              <path d="M120 91 149 120 120 149 91 120Z" />
+              <path d="M120 7 125 21 120 35 115 21ZM233 120 219 125 205 120 219 115ZM120 233 115 219 120 205 125 219ZM7 120 21 115 35 120 21 125Z" />
+            </g>
+          </svg>
+          <svg class="sigil-inner" viewBox="0 0 240 240" aria-hidden="true">
+            <path d="M120 49 135 91 177 106 135 121 120 163 105 121 63 106 105 91Z" />
+            <path d="M120 78 162 120 120 162 78 120Z" />
+            <circle cx="120" cy="120" r="15" />
+            <path d="M120 96v48M96 120h48M103 103l34 34M137 103l-34 34" />
+          </svg>
+          <div class="sigil-core"></div>
+          <div class="sigil-caption">SIGIL ACTIVE <span>•</span> LATVERIA</div>
+        </div>
+        <div class="hero-progress">
+          <div class="progress-number" id="todayPercent">0%</div>
+          <div class="progress-track"><div id="todayBar" class="progress-fill"></div></div>
+          <span>DAILY DIRECTIVE COMPLETE</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"><span></span><b>THE SOVEREIGN'S LEDGER</b><span></span></div>
+
+    <section class="grid">
+      <div class="card schedule-card">
+        <div class="card-head">
+          <div>
+            <div class="section-label">WEEKLY CAMPAIGN</div>
+            <h3>Seven days. One empire.</h3>
+          </div>
+          <button id="resetWeek" class="ghost">Reset week</button>
+        </div>
+        <div id="weekPlan" class="week-plan"></div>
+      </div>
+
+      <div class="card interview-card">
+        <div class="card-head">
+          <div>
+            <div class="section-label">INTELLIGENCE DIVISION</div>
+            <h3>Interview Q&amp;A</h3>
+          </div>
+          <span class="pill">5–10 / DAY</span>
+        </div>
+        <p class="muted">Acquire the theory during office hours. Reserve the night for execution, not memorising answers.</p>
+        <div class="question-box">
+          <div class="question-count"><span id="qCount">0</span><small>QUESTIONS LOGGED</small></div>
+          <div class="q-actions">
+            <button class="qbtn" data-delta="-1" aria-label="Decrease questions">−</button>
+            <button class="qbtn primary" data-delta="1" aria-label="Add one question">+1</button>
+          </div>
+        </div>
+        <div class="topic"><span>ACTIVE STUDY ROTATION</span><strong id="topic"></strong></div>
+      </div>
+
+      <div class="card focus-card">
+        <div class="card-head">
+          <div>
+            <div class="section-label">NIGHTLY OPERATIONS</div>
+            <h3>Today's blocks</h3>
+          </div>
+          <span class="corner-code">01 / 07</span>
+        </div>
+        <div id="todayBlocks"></div>
+      </div>
+
+      <div class="card progress-card">
+        <div class="card-head">
+          <div>
+            <div class="section-label">CAMPAIGN METRICS</div>
+            <h3>Progress, not promises.</h3>
+          </div>
+          <span class="corner-code">LIVE</span>
+        </div>
+        <div class="metric">
+          <div><span>DSA SESSIONS</span><strong id="dsaSessions">0</strong></div>
+          <div class="mini-track"><div id="dsaBar" class="progress-fill"></div></div>
+        </div>
+        <div class="metric">
+          <div><span>BACKEND SESSIONS</span><strong id="backendSessions">0</strong></div>
+          <div class="mini-track"><div id="backendBar" class="progress-fill"></div></div>
+        </div>
+        <div class="metric">
+          <div><span>GYM SESSIONS</span><strong id="gymSessions">0</strong></div>
+          <div class="mini-track"><div id="gymBar" class="progress-fill"></div></div>
+        </div>
+        <div class="metric-seal" aria-hidden="true">V</div>
+      </div>
+    </section>
+
+    <footer>
+      <span>LATVERIA <b>//</b> COMMAND PROTOCOL 01</span>
+      <span>DSA 07:00–09:15 PM <b>•</b> BACKEND 10:00 PM–01:30 AM</span>
+      <span>BUILD. TRAIN. CONQUER.</span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
